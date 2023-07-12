@@ -1,29 +1,37 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package paquete004;
 
-import paquete001.Persona;
+import paquete002.Ciudad;
 
-/**
- *
- * @author reroes
- */
-public class PagoLuzElectrica {
+public class PagoLuzElectrica extends Pago {
+    Ciudad ciudad;
+    double tarifaBase = 10.20;
+    double kilovatiosConsumidos = 80;
+    double costoKilovatio = 0.5;
+
+    public PagoLuzElectrica(double tarifaBase, double kilovatiosConsumidos, double costoKilovatio) {
+        this.tarifaBase = tarifaBase;
+        this.kilovatiosConsumidos = kilovatiosConsumidos;
+        this.costoKilovatio = costoKilovatio;
+    }
 
     public double calcularPago() {
-        double pago = 0;
-        double tarifaBase = 10.20;
-        double kilovatiosConsumidos = 80;
-        double costoKilovatio = 0.5;
-        String ciudad = "Loja";
         if (ciudad.equals("Loja")) {
-            pago = tarifaBase + (kilovatiosConsumidos * costoKilovatio / 2);
+            calcularpago = tarifaBase + (kilovatiosConsumidos * costoKilovatio / 2);
         } else {
-            pago = tarifaBase + (kilovatiosConsumidos * costoKilovatio);
+            calcularpago= tarifaBase + (kilovatiosConsumidos * costoKilovatio);
         }
+        return calcularpago;
+    }
 
-        return pago;
+    @Override
+    public String toString() {
+        return "PagoLuzElectrica " +
+                "ciudad " + ciudad +
+                ", tarifa Base " + tarifaBase +
+                ", kilovatios Consumidos=" + kilovatiosConsumidos +
+                ", costo Kilovatio " + costoKilovatio +
+                ", calcular pago " + calcularpago +  super.toString() +
+                '}';
     }
 }
+

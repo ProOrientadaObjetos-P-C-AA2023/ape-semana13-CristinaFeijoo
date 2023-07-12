@@ -5,47 +5,34 @@
  */
 package p2;
 
+import p1.Matricula;
 import p1.MatriculaCampamento;
 import p1.MatriculaColegio;
 
-/**
- *
- * @author reroes
- */
+import java.util.List;
+
 public class TipoMatricula {
     private double promedioMatriculas;
-    private MatriculaCampamento campamento;
-    private MatriculaColegio colegio;
-    // private MatriculaEscuela escuela;
-    // private MatriculaJardin jardin;
-    // private MatriculaMaternal maternal;
-    // private MatriculaMaternal maternal2;
-    
-    public void establecerMatriculaCampamento(MatriculaCampamento c){
-        campamento = c;
+    private List<Matricula> matriculas;
+
+    public void establecerMatriculas(List<Matricula> m) {
+        matriculas = m;
     }
-    
-    public void establecerMatriculaColegio(MatriculaColegio c){
-        colegio = c;
+
+    public List<Matricula> obtenerMatriculas() {
+        return matriculas;
     }
-    
-    public MatriculaCampamento obtenerMatriculaCampamento(){
-        return campamento;
+
+    public void establecerPromedioTarifas() {
+        double sumaTarifas = 0;
+        for (Matricula matricula : matriculas) {
+            matricula.establecerTarifa();
+            sumaTarifas += matricula.obtenerTarifa();
+        }
+        promedioMatriculas = sumaTarifas / matriculas.size();
     }
-    
-    public MatriculaColegio obtenerMatriculaColegio(){
-        return colegio;
-    }
-    
-    public void establecerPromedioTarifas(){
-        promedioMatriculas = (obtenerMatriculaCampamento().obtenerTarifa() + 
-                obtenerMatriculaColegio().obtenerTarifa())/2;
-        
-    }
-    
-    public double obtenerPromedioTarifas(){
+
+    public double obtenerPromedioTarifas() {
         return promedioMatriculas;
     }
-    
-    
 }

@@ -4,20 +4,10 @@
  * and open the template in the editor.
  */
 package p1;
-
-/**
- *
- * @author reroes
- */
-public class MatriculaCampamento {
+public class MatriculaCampamento extends Matricula {
     private double tarifa;
-    
-    public void establecerTarifa(){
-        // tarifa = costo transporte + costo comida + costo instructores
+    public void establecerTarifa() {
         tarifa = 100.2 + 30.2 + 90.2;
     }
-        
-    public double obtenerTarifa(){
-        return tarifa;
-    }
 }
+

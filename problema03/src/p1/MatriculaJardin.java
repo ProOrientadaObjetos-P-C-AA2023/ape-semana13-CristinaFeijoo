@@ -5,20 +5,10 @@
  */
 package p1;
 
-/**
- *
- * @author reroes
- */
-public class MatriculaJardin {
+
+public class MatriculaJardin extends Matricula {
     private double tarifa;
-    
-        
-    public void establecerTarifa(){
-        // tarifa = costo desayunos + costo libros + costo paseos
+    public void establecerTarifa() {
         tarifa = 50.2 + 140.2 + 40;
-    }
-        
-    public double obtenerTarifa(){
-        return tarifa;
     }
 }

@@ -8,6 +8,18 @@ package paquete002;
  *
  * @author reroes
  */
-public class Ciudad {
-    String nombreCiudad;
+public class Ciudad { //Open close
+    private String nombreCiudad;
+
+    public Ciudad(String nombreCiudad) {
+        this.nombreCiudad = nombreCiudad;
+    }
+
+    public String getNombreCiudad() {
+        return nombreCiudad;
+    }
+
+    public void setNombreCiudad(String nombreCiudad) {
+        this.nombreCiudad = nombreCiudad;
+    }
 }
